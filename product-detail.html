@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="top-menu"> 
+        <p>EXPERIENCE MORE!</p>
+    </div>
+    <nav>
+        <div class="khind">
+            <img src="/images/khind.png">
+        </div>
+        <ul>
+    
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login Form</a></li>
+
+    </ul>
+    </nav>
+    <div class="slideshow">
+        <h1>Kh<u>ind's Produc</u>ts</h1>
+        <p> OUR PRODUCT OVERVIEW </p>
+
+    </div>
+
+    <div class="product-detail-container">
+        <img id="product-image" src="" alt="Product Image">
+        <h2 id="product-title"></h2>
+        <p id="product-model"></p>
+        <span class="price" id="product-price"></span>
+        <p id="product-description"></p>
+    </div>
+
+    <script>
+       
+        const params = new URLSearchParams(window.location.search);
+        const product = params.get("product");
+
+       
+        const productDetails = {
+            "blender": {
+                "image": "images/khindblender.jpg",
+                "title": "Khind 2L Blender PRO",
+                "model": "Model: BL2000P",
+                "price": "RM 269.00",
+                "description": "2 Litres PC Jar with 6 Points Stainless Steel Blades, Variable Speeds, Timer Selection & Pulse Function, Multifunction for Juice/Shakes, Smoothies, Hot Soups/Soy Milks, Crush Ice, Nuts, Frozen Desserts, Puree/Sauce/Salsa"
+            },
+            "vacuum": {
+                "image": "images/vacuumcleaner.jpg",
+                "title": "Vacuum Cleaner",
+                "model": "Model: VC66B",
+                "price": "RM 129.00",
+                "description": "Cyclonic system with HEPA filter, Built-in resettable thermo fuse for motor overheat safety protection, 120W 150kPa Suction Power, Lightweight and powerful vacuum cleaner."
+            },
+
+            "washingmachine": {
+                "image": "images/khindwashingmachine.jpg",
+                "title": "Khind 10kg Fully Auto Washing Machine",
+                "model": "Model : WM100A",
+                "price": "RM 969.00",
+                "description": "Energy Star Rating: 3 Star, Gentle Soft Closing Lid, Multiple Easy to Use Washing Program, Easy Clean Lint Filter, Child Lock Security, Warranty 5 Year on Motor, 3 Year on Control Panel, 2 Year General"
+            },
+
+            "ricecooker": {
+                "image": "images/khindricecooker.jpg",
+                "title": "Khind 9 Series Electric Rice Cooker",
+                "model": "Model : RC906T",
+                "price": "RM 89.00",
+                "description": "Capacity 0.3L, Warranty 2 years, Built-in Safety Thermal Fuse, Cook & Keep Warm Indicator, Teflon Inner Pot, Cool Touch Handle"
+            },
+
+            "cooktop": {
+                "image": "images/khindcooktop.jpg",
+                "title": "Khind Built-In Stainless Steel Hob",
+                "model": "Model : HB802S2",
+                "price": "RM 359.00",
+                "description": "Warranty 1 year, Stainless Steel Cook Top, 2 Cast Iron Trivets + 1 Wok Adaptor, LPG Gas Type, 2x Cyclone Burner Hobs (100mm)"
+            },
+
+            "fridge": {
+                "image": "images/khindfridge.jpg",
+                "title": "Khind 247L Refrigerator",
+                "model": "Model : RF275",
+                "price": "RM 1,199.00",
+                "description": "Warranty 2 Year General + Outdoor Warranty, 10 Year Warranty on Compressor, Freezer (-14~ -22°C) Fridge (2~8°C), Dual Inverter Technology, Reversible Door."
+            },
+
+            "microwave": {
+                "image": "images/khindmicrowave.jpg",
+                "title": "Khind 23L Microwave Oven",
+                "model": "Model : MW2301D",
+                "price": "RM 349.00",
+                "description": "2 years Warranty, 5 Microwave Power Selections, 8 Preset Auto Menu Functions, Quick Start Operation, Defrost by Weight & Timer."
+            },
+
+            "airfryer": {
+                "image": "images/khindairfryer.jpg",
+                "title": "Khind 4.5L Air Fryer",
+                "model": "Model : ARF45W",
+                "price": "RM 229.00",
+                "description": "1 Year Warranty, 80% Less Oil*, Viewing Window with Lighting for Cooking Convenience, Up to 200°C Temperature, Built-in Interior Light, Overheat Protection."
+            }
+        };
+
+        // Check if product exists and update the page
+        if (productDetails[product]) {
+            document.getElementById("product-image").src = productDetails[product].image;
+            document.getElementById("product-title").textContent = productDetails[product].title;
+            document.getElementById("product-model").textContent = productDetails[product].model;
+            document.getElementById("product-price").textContent = productDetails[product].price;
+            document.getElementById("product-description").textContent = productDetails[product].description;
+        } else {
+            document.body.innerHTML = "<h2>Product not found</h2>";
+        }
+    </script>
+
+</body>
+</html>
